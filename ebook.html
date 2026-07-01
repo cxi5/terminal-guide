@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domínio Completo do Terminal Linux</title>
+
+<!-- SEO / preview em redes sociais -->
+<meta name="description" content="Guia definitivo do terminal Linux: 50 comandos explicados do básico ao avançado, do iniciante ao especialista em linha de comando.">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn, etc.) -->
+<meta property="og:type" content="book">
+<meta property="og:title" content="Domínio Completo do Terminal Linux">
+<meta property="og:description" content="Guia definitivo do terminal Linux: 50 comandos explicados do básico ao avançado, do iniciante ao especialista em linha de comando.">
+<meta property="og:image" content="social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_PT">
+<!-- Nota: adicione "og:url" com o endereço real assim que o repositório/site estiver publicado -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Domínio Completo do Terminal Linux">
+<meta name="twitter:description" content="Guia definitivo do terminal Linux: 50 comandos explicados do básico ao avançado, do iniciante ao especialista em linha de comando.">
+<meta name="twitter:image" content="social-preview.png">
+<link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAAUAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAdtJREFUeJylkz1rVEEUhp8zH7vZXVlIERS10Yi6K4qK5BeIWIiF2IgoFv4Ia1PonxAsNLZGGztROwvXKG4kbGEhRg1YrG72487MsbjXfBC4KTxwGGbgPOe878wIQOViu21X+ncki8eTJkNJGDFJvf0cjzbvT150u1I5f6JlP649M/3xES2r3BICpGa1F0/OXJbaof0L5vvgmgoBwQKwOymK4tK+xhOnWWxpXmKJKhgBayCmMoBVUM1iywABEFSh4SEk5Pcgn9PIbkqCAQQjyCgjndrL6M1tws1zEBPyZwJSDskdT4rWKpi33/D3XhMuHWO8eIN44TAymZROsnllIjAOuKdLuEfvSXMHiXMHIAulAJdjBCYZ2p5h9OAK8mudytUF7Ksv6J46qIItIIl8vw2gRSL4uy9xzz8BBm1MwXqGpFB4pqhxUPMbkAKgUPVIdw33YTXv6gzSHxJunSVcPwPDIdRquMcd3MN3aL26AdBNiEOnHCSFLKHeIp1V3CBCCmAcsvIT9TaXAup2QP7JUwXnMEs/kM7XLRJ8LiGpAs6Jt8sCpzV/UHabxapQ96hUih6SnyWNAk68XTZxdno+Nas9URyK7MioQkhCKNaoIopLzWovzk7PC/zfd/4LR67hpRz8Ys0AAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADwElEQVR4nM2XT2gcdRTHP+/N7GZnt+m2mnZFTGzSpodKUZBSjR6siOBBUDQFe8uhKP6h9KZevInHooiUgoEeRNoKigdRlCpoeoqKtYitbWKrsRujZpPszv6Z+T0PY+K/3U3tbqgPZneZnf19P/Pe9/dmn5CEAq4XhqNcfozNuS2W9jbgzEfoLAxQiaQezzNbnvbLpfFFOLesKcsfAoJHbGfhAXf3wFlv6reClaMMYgJdQDAxyfnVeHBjUT+9uF1OF98LCd8CVAACgofcSP9eCrnvvY8v7pNyY6BD0eYkudTF+J6BNyiWb9aJS8dCwrclD0O1nVuet23X/+y/e/ZZSwmoOJLkdTMEZyoNI3pw+0vy3S+bek5Pv6j1XH6/G+k/rycvjFlKDRWHoRhelw9FxVlKTU9eGHMj/efrufx+tb7ssEyVChpGBRTD0C7f+Z9hKIppGBVkqlSwvuywEvjrpFIPMDG6n/bmGCYmlXpA4K9TnCmKo5nbO/V/6xAUhzNtn+6GS969tatK65WdYX1ZiGNkMQSRNQFpvqKvSLVKdGA31Y/2E92/DWoRslhZ+b5b5WkOYIAI8uMC7q5hau8/QfWTMaLRnWCGLFQg7o5f/aZnY4cFGfzDk+jkDNFTu4keu43ayA70myn8Q6fwT5yBMEqaaQcs7YvqK/rZD/TsO07m9ldJvfIhdl1A/fAoteOjyTVGR+VonoGVENiQwWoR3ufTeF9chstLNF64D3frDYkpY1sjABGoR0i5jrtxI42DdxIduAPbvBmZnSN16BQ0YvA9sKuvQXMAIfHBTetpPL6LxpO7oLcP+WmG1HPv4B/9EplZgGxPR+KtATxFyks0nrmXxsGH0W/P4L/8Af6bZ5Bfl7B0GnoDiF1H4q0BnGHqIV/Pkn56HP/1SSSsYz092PpsUve/iq/mgTZJaglAJoN/9CskamBB5g9hB1GTu67FzYWWwdLefwRYXq3Hx4IUuCbCIhDF2IYM9WOPYr0ZMJech8QboshilfTeE8h8NTHsPyjbb0Oz9h3PAE9xOzZh+SwQ/x0ADylVku3aYplV+sAqcL4ipSrBLa9h0twIYgblevL8sH/3jKsHWAEB5qvtfei3bridAwCklNZbwVbZBSoOh9LJI8VWXq78Fy75k6qE0ZJl02GXhpArCUFMLJsOCaMllbnKORvMF13gF3EIQuftrbW0wyEu8Is2mC/KXOWcpsulIzpxaavbMzQuDSc4UwSHEHf5cMlg4sTtGRrXiUtb0+XSkWs/mvF/GE65huP577yR8wGkke/EAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+  <link rel="stylesheet" href="ebook.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-logo">&gt;_ terminal.guide</div>
+  </div>
+  <div class="topbar-right">
+    <button class="btn-lang active" id="btnPT" onclick="setLang('pt')">PT</button>
+    <button class="btn-lang" id="btnEN" onclick="setLang('en')">EN</button>
+    <button class="btn-icon" onclick="toggleSidebar()" title="Índice">
+      ☰ <span class="t" data-pt="Índice" data-en="Index">Índice</span>
+    </button>
+    <button class="btn-icon" onclick="toggleTheme()" title="Modo">
+      <span id="themeIcon">🌙</span>
+    </button>
+  </div>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-title" data-pt="Navegar" data-en="Navigate">Navegar</div>
+  <div id="tocList"></div>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="main">
+
+  <!-- PAGE 0: COVER -->
+  <div class="page active" id="page-0">
+    <div class="cover">
+      <div class="cover-bg"></div>
+      <div class="cover-grid"></div>
+      <div class="cover-content">
+        <div class="cover-eyebrow">
+          <span class="t" data-pt="Guia Definitivo" data-en="Definitive Guide">Guia Definitivo</span>
+        </div>
+        <h1 class="cover-title">
+          <em class="t" data-pt="Domínio Completo" data-en="Complete Mastery">Domínio Completo</em><br>
+          <span class="t" data-pt="do Terminal Linux" data-en="of Linux Terminal">do Terminal Linux</span>
+        </h1>
+        <p class="cover-subtitle t" data-pt="Do Iniciante ao Especialista em Linha de Comando. 50 Comandos Explicados do Básico ao Avançado." data-en="From Beginner to Command Line Expert. 50 Commands Explained from Basic to Advanced.">
+          Do Iniciante ao Especialista em Linha de Comando. 50 Comandos Explicados do Básico ao Avançado.
+        </p>
+        <div class="cover-meta">
+          <div class="cover-meta-item">💻 <span>50</span> <span class="t" data-pt="comandos" data-en="commands">comandos</span></div>
+          <div class="cover-meta-item">📖 <span>6</span> <span class="t" data-pt="blocos temáticos" data-en="thematic blocks">blocos temáticos</span></div>
+          <div class="cover-meta-item">🚀 <span class="t" data-pt="Nível: Zero ao Pro" data-en="Level: Zero to Pro">Nível: Zero ao Pro</span></div>
+        </div>
+        <div class="cover-terminal">
+          <div class="terminal-bar">
+            <div class="terminal-dot r"></div>
+            <div class="terminal-dot y"></div>
+            <div class="terminal-dot g"></div>
+          </div>
+          <div class="terminal-line"><span class="cmd">$ </span><span class="out t" data-pt="whoami" data-en="whoami">whoami</span></div>
+          <div class="terminal-line"><span class="out t" data-pt="desenvolvedor_do_futuro" data-en="future_developer">desenvolvedor_do_futuro</span></div>
+          <div class="terminal-line"><span class="cmd">$ </span><span class="out t" data-pt="pwd" data-en="pwd">pwd</span></div>
+          <div class="terminal-line"><span class="out">/home/</span><span class="cmd t" data-pt="seu_caminho/para_o_topo" data-en="your_path/to_the_top">seu_caminho/para_o_topo</span></div>
+          <div class="terminal-line"><span class="cmd">$ </span><span class="terminal-cursor"></span></div>
+        </div>
+        <button class="btn-start" onclick="goToPage(1)">
+          <span class="t" data-pt="Começar a Ler" data-en="Start Reading">Começar a Ler</span> →
+        </button>
+      </div>
+      <div class="cover-scroll">
+        <div class="cover-version t" data-pt="Versão 1.0 · Junho 2025 · Leonardo Sebastião" data-en="Version 1.0 · June 2025 · Leonardo Sebastião">Versão 1.0 · Junho 2025 · Leonardo Sebastião</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 1: TABLE OF CONTENTS -->
+  <div class="page" id="page-1">
+    <div class="toc-page">
+      <div class="page-header">
+        <div class="page-eyebrow t" data-pt="Conteúdo" data-en="Contents">Conteúdo</div>
+        <h1 class="page-title t" data-pt="O Que Vais Aprender" data-en="What You Will Learn">O Que Vais Aprender</h1>
+        <p class="page-desc t" data-pt="Navega directamente para qualquer secção. Este guia está organizado para que possas seguir do início ao fim ou saltar para o que precisas." data-en="Navigate directly to any section. This guide is organized so you can follow from start to finish or jump to what you need.">
+          Navega directamente para qualquer secção. Este guia está organizado para que possas seguir do início ao fim ou saltar para o que precisas.
+        </p>
+      </div>
+      <div class="toc-list" id="mainToc"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: INTRO -->
+  <div class="page" id="page-2">
+    <div class="content-page">
+      <div class="section-tag t" data-pt="Introdução" data-en="Introduction">Introdução</div>
+      <h1 class="t" data-pt="O Que É o Terminal" data-en="What Is the Terminal">O Que É o Terminal</h1>
+
+      <p class="t" data-pt="Um terminal é a interface mais fundamental entre você e seu computador. Enquanto a maioria das pessoas interage através de ícones e janelas, o terminal oferece uma forma diferente e muito mais poderosa: você se comunica através de texto, digitando comandos que o computador executa imediatamente." data-en="A terminal is the most fundamental interface between you and your computer. While most people interact through icons and windows, the terminal offers a different and far more powerful way: you communicate through text, typing commands the computer executes immediately.">Um terminal é a interface mais fundamental entre você e seu computador. Enquanto a maioria das pessoas interage através de ícones e janelas, o terminal oferece uma forma diferente e muito mais poderosa: você se comunica através de texto, digitando comandos que o computador executa imediatamente.</p>
+
+      <h2 class="t" data-pt="Terminal vs. Interface Gráfica" data-en="Terminal vs. Graphical Interface">Terminal vs. Interface Gráfica</h2>
+
+      <div class="comparison-grid">
+        <div class="comparison-card">
+          <div class="comparison-label t" data-pt="Interface Gráfica (GUI)" data-en="Graphical Interface (GUI)">Interface Gráfica (GUI)</div>
+          <p class="t" data-pt="Intuitiva, visual e amigável. Perfeita para tarefas do dia-a-dia. Mas esconde a maioria das opções avançadas — se queres fazer algo que a GUI não previu, ficas preso." data-en="Intuitive, visual and friendly. Perfect for everyday tasks. But hides most advanced options — if you want to do something the GUI didn't anticipate, you're stuck.">Intuitiva, visual e amigável. Perfeita para tarefas do dia-a-dia. Mas esconde a maioria das opções avançadas — se queres fazer algo que a GUI não previu, ficas preso.</p>
+        </div>
+        <div class="comparison-card" style="border-color:rgba(0,255,136,0.25)">
+          <div class="comparison-label" style="color:var(--accent)">Terminal</div>
+          <p class="t" data-pt="Oferece CONTROLO TOTAL. Não estás limitado ao que alguém desenhou em uma interface. Podes fazer basicamente qualquer coisa que o sistema operativo permite, muito mais rápido." data-en="Offers TOTAL CONTROL. You're not limited to what someone drew in an interface. You can do basically anything the operating system allows, much faster.">Oferece <strong>CONTROLO TOTAL</strong>. Não estás limitado ao que alguém desenhou em uma interface. Podes fazer basicamente qualquer coisa que o sistema operativo permite, muito mais rápido.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong class="t" data-pt="Comparação Prática:" data-en="Practical Comparison:">Comparação Prática:</strong><br>
+        <span class="t" data-pt="Na GUI: mover 1000 ficheiros demora 10 minutos de cliques. No Terminal: um único comando faz tudo em 3 segundos." data-en="In GUI: moving 1000 files takes 10 minutes of clicking. In Terminal: a single command does everything in 3 seconds.">Na GUI: mover 1000 ficheiros demora 10 minutos de cliques. No Terminal: um único comando faz tudo em 3 segundos.</span>
+      </div>
+
+      <h2 class="t" data-pt="Por Que os Developers Usam Terminal" data-en="Why Developers Use the Terminal">Por Que os Developers Usam Terminal</h2>
+
+      <ul class="list-items">
+        <li><span><strong class="t" data-pt="VELOCIDADE:" data-en="SPEED:">VELOCIDADE:</strong> <span class="t" data-pt="Um dev profissional faz em 30 segundos no terminal o que levaria 5 minutos na GUI." data-en="A professional dev does in 30 seconds in terminal what would take 5 minutes in GUI.">Um dev profissional faz em 30 segundos no terminal o que levaria 5 minutos na GUI.</span></span></li>
+        <li><span><strong class="t" data-pt="AUTOMATIZAÇÃO:" data-en="AUTOMATION:">AUTOMATIZAÇÃO:</strong> <span class="t" data-pt="Podes escrever scripts que executam tarefas automaticamente. A GUI não permite isto de forma prática." data-en="You can write scripts that execute tasks automatically. The GUI doesn't allow this practically.">Podes escrever scripts que executam tarefas automaticamente. A GUI não permite isto de forma prática.</span></span></li>
+        <li><span><strong class="t" data-pt="TRABALHO REMOTO:" data-en="REMOTE WORK:">TRABALHO REMOTO:</strong> <span class="t" data-pt="Quando estás conectado num servidor via SSH, não tens interface gráfica. Só terminal." data-en="When you're connected to a server via SSH, you have no graphical interface. Only terminal.">Quando estás conectado num servidor via SSH, não tens interface gráfica. Só terminal.</span></span></li>
+        <li><span><strong class="t" data-pt="PADRÃO DA INDÚSTRIA:" data-en="INDUSTRY STANDARD:">PADRÃO DA INDÚSTRIA:</strong> <span class="t" data-pt="Docker, Git, NPM, Kubernetes, AWS CLI — tudo isto é terminal. É OBRIGATÓRIO." data-en="Docker, Git, NPM, Kubernetes, AWS CLI — all of this is terminal. It's MANDATORY.">Docker, Git, NPM, Kubernetes, AWS CLI — tudo isto é terminal. É OBRIGATÓRIO.</span></span></li>
+      </ul>
+
+      <h2 class="t" data-pt="Linux, Terminal, Bash — Qual É a Diferença?" data-en="Linux, Terminal, Bash — What's the Difference?">Linux, Terminal, Bash — Qual É a Diferença?</h2>
+
+      <div class="highlight-box">
+        <p class="t" data-pt="🏠 Linux é a CASA. Terminal é a PORTA. Bash é a LÍNGUA que falas quando entras." data-en="🏠 Linux is the HOUSE. Terminal is the DOOR. Bash is the LANGUAGE you speak when you enter.">🏠 <strong>Linux</strong> <span class="t" data-pt="é a CASA." data-en="is the HOUSE.">é a CASA.</span> <strong>Terminal</strong> <span class="t" data-pt="é a PORTA." data-en="is the DOOR.">é a PORTA.</span> <strong>Bash</strong> <span class="t" data-pt="é a LÍNGUA que falas quando entras." data-en="is the LANGUAGE you speak when you enter.">é a LÍNGUA que falas quando entras.</span></p>
+      </div>
+
+      <ul class="list-items">
+        <li><span><strong>Linux:</strong> <span class="t" data-pt="Sistema Operativo, como Windows ou macOS. Usado em praticamente todos os servidores do mundo." data-en="Operating System, like Windows or macOS. Used on virtually every server in the world.">Sistema Operativo, como Windows ou macOS. Usado em praticamente todos os servidores do mundo.</span></span></li>
+        <li><span><strong>Terminal:</strong> <span class="t" data-pt="A aplicação que abres para interagir com Linux. Como o Firefox para a internet." data-en="The application you open to interact with Linux. Like Firefox for the internet.">A aplicação que abres para interagir com Linux. Como o Firefox para a internet.</span></span></li>
+        <li><span><strong>Bash:</strong> <span class="t" data-pt="A LINGUAGEM que falas dentro do terminal. \"Bourne Again Shell\" — o shell padrão em Linux." data-en="The LANGUAGE you speak inside the terminal. \"Bourne Again Shell\" — the default shell in Linux.">A LINGUAGEM que falas dentro do terminal. "Bourne Again Shell" — o shell padrão em Linux.</span></span></li>
+      </ul>
+
+      <h2 class="t" data-pt="Como Abrir e Sair do Terminal" data-en="How to Open and Exit the Terminal">Como Abrir e Sair do Terminal</h2>
+
+      <ul class="list-items">
+        <li><span><strong>Linux Desktop:</strong> <span class="t" data-pt="Botão direito na área vazia do desktop → \"Abrir Terminal Aqui\"" data-en="Right click on empty desktop area → \"Open Terminal Here\"">Botão direito na área vazia do desktop → "Abrir Terminal Aqui"</span></span></li>
+        <li><span><strong>Mac:</strong> <span class="t" data-pt="Applications → Utilities → Terminal. Ou Command+Space e digita \"terminal\"." data-en="Applications → Utilities → Terminal. Or Command+Space and type \"terminal\".">Applications → Utilities → Terminal. Ou Command+Space e digita "terminal".</span></span></li>
+        <li><span><strong>Windows 11:</strong> <span class="t" data-pt="Windows Terminal ou PowerShell. Para Bash real, instala WSL." data-en="Windows Terminal or PowerShell. For real Bash, install WSL.">Windows Terminal ou PowerShell. Para Bash real, instala WSL.</span></span></li>
+        <li><span><strong>Android (Termux):</strong> <span class="t" data-pt="Instala o app Termux. Terminal completo no teu telefone." data-en="Install the Termux app. Full terminal on your phone.">Instala o app Termux. Terminal completo no teu telefone.</span></span></li>
+      </ul>
+
+      <div class="code-block"><code>usuario@computador:~$</code></div>
+
+      <p class="t" data-pt="Para sair: digita exit, logout, ou pressiona Ctrl+D." data-en="To exit: type exit, logout, or press Ctrl+D.">Para sair: digita <strong>exit</strong>, <strong>logout</strong>, ou pressiona <strong>Ctrl+D</strong>.</p>
+
+      <h2 class="t" data-pt="Para Quem É Este Guia" data-en="Who Is This Guide For">Para Quem É Este Guia</h2>
+      <ul class="list-items">
+        <li><span class="t" data-pt="Nunca usaste um terminal antes e queres aprender desde zero" data-en="Never used a terminal before and want to learn from scratch">Nunca usaste um terminal antes e queres aprender desde zero</span></li>
+        <li><span class="t" data-pt="Estás a começar programação e sabes que o terminal é essencial" data-en="You're starting programming and know the terminal is essential">Estás a começar programação e sabes que o terminal é essencial</span></li>
+        <li><span class="t" data-pt="Queres melhorar a tua produtividade como developer" data-en="You want to improve your productivity as a developer">Queres melhorar a tua produtividade como developer</span></li>
+        <li><span class="t" data-pt="Queres aprender segurança e hacking ético" data-en="You want to learn security and ethical hacking">Queres aprender segurança e hacking ético</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PAGE 3: CHAPTER 1 - NAVIGATION -->
+  <div class="page" id="page-3">
+    <div class="content-page">
+      <div class="section-tag t" data-pt="Capítulo 1" data-en="Chapter 1">Capítulo 1</div>
+      <h1 class="t" data-pt="Navegação pelo Sistema" data-en="System Navigation">Navegação pelo Sistema</h1>
+      <p class="t" data-pt="Um desenvolvedor passa cerca de 40-50% do seu tempo no terminal, navegando pelo sistema de ficheiros. Dominar navegação é a base de tudo." data-en="A developer spends about 40-50% of their time in the terminal, navigating the file system. Mastering navigation is the foundation of everything.">Um desenvolvedor passa cerca de 40-50% do seu tempo no terminal, navegando pelo sistema de ficheiros. Dominar navegação é a base de tudo.</p>
+
+      <div class="callout">
+        <strong class="t" data-pt="A Analogia da Casa:" data-en="The House Analogy:">A Analogia da Casa:</strong> <span class="t" data-pt="O teu computador é uma CASA GIGANTE. Cada CÔMODO é uma PASTA. Cada OBJETO é um FICHEIRO. O terminal é como te mover por esta casa sem corpo — só com palavras." data-en="Your computer is a GIANT HOUSE. Each ROOM is a FOLDER. Each OBJECT is a FILE. The terminal is like moving through this house without a body — only with words.">O teu computador é uma CASA GIGANTE. Cada CÔMODO é uma PASTA. Cada OBJETO é um FICHEIRO. O terminal é como te mover por esta casa sem corpo — só com palavras.</span>
+      </div>
+
+      <h2 class="t" data-pt="Bloco 1: Descobrir Onde Estás — 5 Comandos" data-en="Block 1: Discover Where You Are — 5 Commands">Bloco 1: Descobrir Onde Estás — 5 Comandos</h2>
+
+      <h3><span class="cmd-badge">pwd</span> <span class="t" data-pt="Print Working Directory" data-en="Print Working Directory">Print Working Directory</span></h3>
+      <p class="t" data-pt="Mostra o caminho COMPLETO da pasta onde estás agora. É o teu «GPS» do terminal. Por trás, é uma variável de ambiente (PWD) que o próprio shell actualiza sempre que mudas de pasta." data-en="Shows the COMPLETE path of the folder you're in now. It's your terminal «GPS». Under the hood, it reflects the PWD environment variable, which the shell updates automatically every time you change directories.">Mostra o caminho COMPLETO da pasta onde estás agora. É o teu «GPS» do terminal. Por trás, é uma variável de ambiente (PWD) que o próprio shell actualiza sempre que mudas de pasta.</p>
+      <div class="code-block"><code>$ pwd
+/home/maria/Documentos/Projetos/website</code></div>
+      <div class="callout purple"><strong>Pro tip:</strong> <span class="t" data-pt="pwd > localizacao.txt salva o teu diretório actual num ficheiro para referência posterior." data-en="pwd > localizacao.txt saves your current directory to a file for later reference.">pwd > localizacao.txt salva o teu diretório actual num ficheiro para referência posterior.</span></div>
+
+      <h3><span class="cmd-badge">pwd -P</span> <span class="t" data-pt="Caminho Físico Real" data-en="Real Physical Path">Caminho Físico Real</span></h3>
+      <p class="t" data-pt="Mostra o caminho FÍSICO, ignorando links simbólicos. Útil quando trabalhas com atalhos ou estruturas complexas. Sem o -P, o pwd normal pode mostrar o caminho do link em vez do destino real — a diferença conta quando precisas da localização exacta no disco." data-en="Shows the PHYSICAL path, ignoring symbolic links. Useful when working with shortcuts or complex structures. Without -P, plain pwd may show the symlink's path instead of its real target — the difference matters when you need the exact location on disk.">Mostra o caminho FÍSICO, ignorando links simbólicos. Útil quando trabalhas com atalhos ou estruturas complexas. Sem o -P, o pwd normal pode mostrar o caminho do link em vez do destino real — a diferença conta quando precisas da localização exacta no disco.</p>
+
+      <h3><span class="cmd-badge">echo $PWD</span> <span class="t" data-pt="Variável de Ambiente" data-en="Environment Variable">Variável de Ambiente</span></h3>
+      <p class="t" data-pt="Alternativa a pwd usando uma variável de ambiente. Mais eficiente em scripts bash — lê uma variável em vez de executar um comando. Como é apenas uma variável, também podes usá-la dentro de outros comandos para construir caminhos dinâmicos." data-en="Alternative to pwd using an environment variable. More efficient in bash scripts — reads a variable instead of executing a command. Since it's just a variable, you can also use it inside other commands to build dynamic paths.">Alternativa a pwd usando uma variável de ambiente. Mais eficiente em scripts bash — lê uma variável em vez de executar um comando. Como é apenas uma variável, também podes usá-la dentro de outros comandos para construir caminhos dinâmicos.</p>
+      <div class="code-block"><code>$ echo "Estou em $PWD"
+Estou em /home/maria/Documentos</code></div>
+
+      <h3><span class="cmd-badge">whoami</span> <span class="t" data-pt="Quem és tu no sistema" data-en="Who you are in the system">Quem és tu no sistema</span></h3>
+      <p class="t" data-pt="Mostra o utilizador actualmente logado. Essencial em servidores com múltiplos utilizadores ou quando trabalhas com permissões. É equivalente a executar id -un, mas mais rápido de escrever quando só precisas do nome do utilizador." data-en="Shows the currently logged in user. Essential on servers with multiple users or when working with permissions. It's equivalent to running id -un, but quicker to type when you only need the username.">Mostra o utilizador actualmente logado. Essencial em servidores com múltiplos utilizadores ou quando trabalhas com permissões. É equivalente a executar id -un, mas mais rápido de escrever quando só precisas do nome do utilizador.</p>
+      <div class="callout warn"><strong>Atenção:</strong> <span class="t" data-pt="Se whoami mostrar \"root\", tens privilégios de administrador. Usa com muito cuidado." data-en="If whoami shows \"root\", you have administrator privileges. Use with great care.">Se whoami mostrar "root", tens privilégios de administrador. Usa com muito cuidado.</span></div>
+
+      <h3><span class="cmd-badge">hostname</span> <span class="t" data-pt="Nome do Computador" data-en="Computer Name">Nome do Computador</span></h3>
+      <p class="t" data-pt="Mostra o nome da máquina. Quando usas SSH para ligar a múltiplos servidores, hostname diz-te qual estás a usar AGORA. Em muitos sistemas, hostname -I também mostra o endereço IP da máquina na rede local." data-en="Shows the machine name. When you use SSH to connect to multiple servers, hostname tells you which one you're using NOW. On many systems, hostname -I also shows the machine's IP address on the local network.">Mostra o nome da máquina. Quando usas SSH para ligar a múltiplos servidores, hostname diz-te qual estás a usar AGORA. Em muitos sistemas, hostname -I também mostra o endereço IP da máquina na rede local.</p>
+      <div class="callout warn"><strong class="t" data-pt="SEGURANÇA CRÍTICA:" data-en="CRITICAL SAFETY:">SEGURANÇA CRÍTICA:</strong> <span class="t" data-pt="Developers profissionais SEMPRE verificam hostname antes de executar comandos destrutivos. Um rm -rf no servidor de produção em vez de teste pode ser catastrófico." data-en="Professional developers ALWAYS check hostname before running destructive commands. A rm -rf on the production server instead of test can be catastrophic.">Developers profissionais SEMPRE verificam hostname antes de executar comandos destrutivos. Um rm -rf no servidor de produção em vez de teste pode ser catastrófico.</span></div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: BLOCK 2 - LS COMMANDS -->
+  <div class="page" id="page-4">
+    <div class="content-page">
+      <div class="section-tag t" data-pt="Capítulo 1 — Bloco 2" data-en="Chapter 1 — Block 2">Capítulo 1 — Bloco 2</div>
+      <h1 class="t" data-pt="Listar e Ver Conteúdo" data-en="List and View Content">Listar e Ver Conteúdo</h1>
+      <p class="t" data-pt="12 variações do comando ls — o mais usado no terminal. Cada variação revela uma camada diferente de informação." data-en="12 variations of the ls command — the most used in terminal. Each variation reveals a different layer of information.">12 variações do comando ls — o mais usado no terminal. Cada variação revela uma camada diferente de informação.</p>
+
+      <h3><span class="cmd-badge">ls</span> <span class="t" data-pt="Listar ficheiros" data-en="List files">Listar ficheiros</span></h3>
+      <p class="t" data-pt="Lista os ficheiros e pastas no diretório actual. Simples, directo. Não mostra ficheiros ocultos (os que começam com ponto). Por padrão, os resultados saem ordenados alfabeticamente; para outra ordem, precisas de combinar com flags como -t ou -S." data-en="Lists files and folders in the current directory. Simple, direct. Doesn't show hidden files (those starting with a dot). By default, results come out sorted alphabetically; for a different order, you need to combine it with flags like -t or -S.">Lista os ficheiros e pastas no diretório actual. Simples, directo. Não mostra ficheiros ocultos (os que começam com ponto). Por padrão, os resultados saem ordenados alfabeticamente; para outra ordem, precisas de combinar com flags como -t ou -S.</p>
+
+      <h3><span class="cmd-badge">ls -l</span> <span class="t" data-pt="Formato Longo" data-en="Long Format">Formato Longo</span></h3>
+      <p class="t" data-pt="Listagem detalhada com permissões, dono, tamanho e data de modificação. A primeira letra da linha (como o d em drwxr-xr-x) já diz se é um directório, um ficheiro normal ou um link." data-en="Detailed listing with permissions, owner, size and modification date. The first letter of the line (like the d in drwxr-xr-x) already tells you if it's a directory, a regular file, or a link.">Listagem detalhada com permissões, dono, tamanho e data de modificação. A primeira letra da linha (como o d em drwxr-xr-x) já diz se é um directório, um ficheiro normal ou um link.</p>
+      <div class="code-block"><code>drwxr-xr-x 2 maria grupo 4096 Jun 10 14:32 Documentos</code></div>
+
+      <h3><span class="cmd-badge">ls -la</span> <span class="t" data-pt="Tudo + Detalhado" data-en="Everything + Detailed">Tudo + Detalhado</span></h3>
+      <p class="t" data-pt="Combina -l (detalhado) com -a (mostrar tudo, incluindo ocultos). A maioria dos devs usa este como padrão. No Linux, ficheiros ocultos não têm nada de especial na estrutura — só começam por um ponto, como .bashrc ou .git." data-en="Combines -l (detailed) with -a (show everything, including hidden). Most devs use this as default. On Linux, hidden files aren't structurally special — they just start with a dot, like .bashrc or .git.">Combina -l (detalhado) com -a (mostrar tudo, incluindo ocultos). A maioria dos devs usa este como padrão. No Linux, ficheiros ocultos não têm nada de especial na estrutura — só começam por um ponto, como .bashrc ou .git.</p>
+
+      <h3><span class="cmd-badge">ls -lh</span> <span class="t" data-pt="Tamanhos Legíveis" data-en="Human Readable Sizes">Tamanhos Legíveis</span></h3>
+      <p class="t" data-pt="Igual a ls -l mas mostra tamanhos em K, M, G em vez de bytes. Muito mais fácil de ler. O h vem de \"human-readable\" — a mesma lógica aparece noutros comandos, como du -h e df -h." data-en="Same as ls -l but shows sizes in K, M, G instead of bytes. Much easier to read. The h stands for \"human-readable\" — the same logic shows up in other commands, like du -h and df -h.">Igual a ls -l mas mostra tamanhos em K, M, G em vez de bytes. Muito mais fácil de ler. O h vem de \"human-readable\" — a mesma lógica aparece noutros comandos, como du -h e df -h.</p>
+      <div class="code-block"><code>$ ls -lh
+-rw-r--r-- 1 maria 150M Jun 10 arquivo.zip</code></div>
+
+      <h3><span class="cmd-badge">ls -lS</span> <span class="t" data-pt="Ordenado por Tamanho" data-en="Sorted by Size">Ordenado por Tamanho</span></h3>
+      <p class="t" data-pt="Lista ordenado por tamanho, maiores primeiro. Perfeito para encontrar o que está a ocupar espaço em disco. Combinado com | head -10, mostra rapidamente só os 10 maiores ficheiros de uma pasta cheia." data-en="Lists sorted by size, largest first. Perfect for finding what's taking up disk space. Combined with | head -10, it quickly shows just the 10 largest files in a crowded folder.">Lista ordenado por tamanho, maiores primeiro. Perfeito para encontrar o que está a ocupar espaço em disco. Combinado com | head -10, mostra rapidamente só os 10 maiores ficheiros de uma pasta cheia.</p>
+
+      <h3><span class="cmd-badge">ls -lt</span> <span class="t" data-pt="Ordenado por Tempo" data-en="Sorted by Time">Ordenado por Tempo</span></h3>
+      <p class="t" data-pt="Ordenado por data de modificação, mais recente primeiro. Ideal para ver o que mudou recentemente. É normalmente o primeiro comando que muitos devs correm depois de puxar um repositório, só para ver o que mudou." data-en="Sorted by modification date, most recent first. Ideal for seeing what changed recently. It's often the first command many devs run after pulling a repository, just to see what changed.">Ordenado por data de modificação, mais recente primeiro. Ideal para ver o que mudou recentemente. É normalmente o primeiro comando que muitos devs correm depois de puxar um repositório, só para ver o que mudou.</p>
+
+      <h3><span class="cmd-badge">ls -ltr</span> <span class="t" data-pt="Ordem Cronológica Reversa" data-en="Reverse Chronological Order">Ordem Cronológica Reversa</span></h3>
+      <p class="t" data-pt="Igual a -lt mas invertido — mais antigos primeiro, mais recentes no final (onde podes ver). Muitos devs usam isto como padrão. É especialmente útil em pastas de logs, onde queres ver a entrada mais recente logo no fundo do ecrã." data-en="Same as -lt but reversed — oldest first, most recent at the end (where you can see). Many devs use this as default. It's especially useful in log folders, where you want to see the most recent entry right at the bottom of the screen.">Igual a -lt mas invertido — mais antigos primeiro, mais recentes no final (onde podes ver). Muitos devs usam isto como padrão. É especialmente útil em pastas de logs, onde queres ver a entrada mais recente logo no fundo do ecrã.</p>
+
+      <h3><span class="cmd-badge">ls -1</span> <span class="t" data-pt="Um por Linha" data-en="One per Line">Um por Linha</span></h3>
+      <p class="t" data-pt="Cada ficheiro numa linha separada. Ideal para processar a saída em scripts. Sem esta flag, o ls tenta organizar a saída em colunas quando corre num terminal interactivo, o que dificulta o processamento automático." data-en="Each file on a separate line. Ideal for processing output in scripts. Without this flag, ls tries to arrange output in columns when run in an interactive terminal, which makes automated processing harder.">Cada ficheiro numa linha separada. Ideal para processar a saída em scripts. Sem esta flag, o ls tenta organizar a saída em colunas quando corre num terminal interactivo, o que dificulta o processamento automático.</p>
+      <div class="code-block"><code>$ ls -1 | wc -l   <span class="t" data-pt="# conta o número de ficheiros" data-en="# counts the number of files"># conta o número de ficheiros</span></code></div>
+
+      <h3><span class="cmd-badge">ls -d</span> <span class="t" data-pt="Apenas Directórios" data-en="Directories Only">Apenas Directórios</span></h3>
+      <p class="t" data-pt="Mostra apenas pastas, ignorando ficheiros. Útil quando tens centenas de ficheiros mas só queres ver a estrutura de pastas. Combina bem com wildcards — ls -d */ mostra só as pastas de topo, sem entrar em nenhuma delas." data-en="Shows only folders, ignoring files. Useful when you have hundreds of files but only want to see the folder structure. It works well with wildcards — ls -d */ shows only the top-level folders, without entering any of them.">Mostra apenas pastas, ignorando ficheiros. Útil quando tens centenas de ficheiros mas só queres ver a estrutura de pastas. Combina bem com wildcards — ls -d */ mostra só as pastas de topo, sem entrar em nenhuma delas.</p>
+
+      <h3><span class="cmd-badge">ls -R</span> <span class="t" data-pt="Recursivo" data-en="Recursive">Recursivo</span></h3>
+      <p class="t" data-pt="Lista recursivamente toda a árvore de directórios. Cuidado com directórios com muitos ficheiros — pode ser muito lento. Em projectos grandes, é comum combinar com | less para poderes percorrer a saída com calma." data-en="Recursively lists the entire directory tree. Be careful with directories with many files — can be very slow. In large projects, it's common to combine it with | less so you can browse the output at your own pace.">Lista recursivamente toda a árvore de directórios. Cuidado com directórios com muitos ficheiros — pode ser muito lento. Em projectos grandes, é comum combinar com | less para poderes percorrer a saída com calma.</p>
+
+      <h3><span class="cmd-badge">ls --group-directories-first</span></h3>
+      <p class="t" data-pt="Mostra todas as pastas primeiro, depois os ficheiros. Torna muito mais fácil ver a estrutura de pastas. Não é um comando POSIX padrão — é uma extensão do GNU ls, por isso pode não existir em todos os sistemas Unix." data-en="Shows all folders first, then files. Makes it much easier to see the folder structure. It's not standard POSIX — it's a GNU ls extension, so it may not exist on every Unix system.">Mostra todas as pastas primeiro, depois os ficheiros. Torna muito mais fácil ver a estrutura de pastas. Não é um comando POSIX padrão — é uma extensão do GNU ls, por isso pode não existir em todos os sistemas Unix.</p>
+
+      <div class="callout">
+        <strong>Alias útil:</strong> <span class="t" data-pt="Muitos devs adicionam ao seu .bashrc: alias ll='ls -lah --group-directories-first' para ter sempre a melhor visão de um directório." data-en="Many devs add to their .bashrc: alias ll='ls -lah --group-directories-first' to always have the best view of a directory.">Muitos devs adicionam ao seu .bashrc: alias ll='ls -lah --group-directories-first' para ter sempre a melhor visão de um directório.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: BLOCK 3 - CD COMMANDS -->
+  <div class="page" id="page-5">
+    <div class="content-page">
+      <div class="section-tag t" data-pt="Capítulo 1 — Bloco 3" data-en="Chapter 1 — Block 3">Capítulo 1 — Bloco 3</div>
+      <h1 class="t" data-pt="Navegar Estrategicamente" data-en="Navigate Strategically">Navegar Estrategicamente</h1>
+      <p class="t" data-pt="10 comandos para te moveres pelo sistema de ficheiros com velocidade e precisão." data-en="10 commands to move through the file system with speed and precision.">10 comandos para te moveres pelo sistema de ficheiros com velocidade e precisão.</p>
+
+      <h3><span class="cmd-badge">cd</span> <span class="t" data-pt="Change Directory" data-en="Change Directory">Change Directory</span></h3>
+      <p class="t" data-pt="O comando para entrar numa pasta. Podes usar caminhos relativos (a partir de onde estás) ou absolutos (a partir da raiz /). Sem qualquer argumento, cd sozinho leva-te sempre para a tua pasta home, tal como cd ~." data-en="The command to enter a folder. You can use relative paths (from where you are) or absolute paths (from the root /). Without any argument, cd on its own always takes you to your home folder, just like cd ~.">O comando para entrar numa pasta. Podes usar caminhos relativos (a partir de onde estás) ou absolutos (a partir da raiz /). Sem qualquer argumento, cd sozinho leva-te sempre para a tua pasta home, tal como cd ~.</p>
+      <div class="code-block"><code>$ cd Documentos          <span class="t" data-pt="# caminho relativo" data-en="# relative path"># caminho relativo</span>
+$ cd /var/log            <span class="t" data-pt="# caminho absoluto" data-en="# absolute path"># caminho absoluto</span>
+$ cd                     <span class="t" data-pt="# volta para home" data-en="# returns to home"># volta para home</span></code></div>
+
+      <h3><span class="cmd-badge">cd ..</span> <span class="t" data-pt="Subir um nível" data-en="Go up one level">Subir um nível</span></h3>
+      <p class="t" data-pt=".. significa «pasta pai». Sobe um nível na hierarquia. Um dos gestos mais repetidos no terminal. Para saltos mais longos, podes encadear vários níveis numa linha só, como cd ../../../." data-en=".. means «parent folder». Goes up one level in the hierarchy. One of the most repeated gestures in terminal. For longer jumps, you can chain several levels in a single line, like cd ../../../.">.. significa «pasta pai». Sobe um nível na hierarquia. Um dos gestos mais repetidos no terminal. Para saltos mais longos, podes encadear vários níveis numa linha só, como cd ../../../.</p>
+      <div class="code-block"><code>$ cd ../..    <span class="t" data-pt="# sobe 2 níveis de uma vez" data-en="# goes up 2 levels at once"># sobe 2 níveis de uma vez</span></code></div>
+
+      <h3><span class="cmd-badge">cd ~</span> <span class="t" data-pt="Pasta Home" data-en="Home Folder">Pasta Home</span></h3>
+      <p class="t" data-pt="~ é um atalho especial para a tua pasta pessoal. Quando estás perdido em estruturas complexas, cd ~ traz-te de volta a casa. O til é expandido pelo próprio shell antes de chegar ao comando, por isso funciona da mesma forma com outros comandos, como cp ~/ficheiro.txt ." data-en="~ is a special shortcut for your personal folder. When you're lost in complex structures, cd ~ brings you back home. The tilde is expanded by the shell itself before it even reaches the command, so it works the same way with other commands, like cp ~/file.txt .">~ é um atalho especial para a tua pasta pessoal. Quando estás perdido em estruturas complexas, cd ~ traz-te de volta a casa. O til é expandido pelo próprio shell antes de chegar ao comando, por isso funciona da mesma forma com outros comandos, como cp ~/ficheiro.txt .</p>
+
+      <h3><span class="cmd-badge">cd /</span> <span class="t" data-pt="Raiz do Sistema" data-en="System Root">Raiz do Sistema</span></h3>
+      <p class="t" data-pt="/ é o topo absoluto da hierarquia. De aqui, vês bin, etc, home, var — todas as pastas principais do Linux. É também o ponto de partida de qualquer caminho absoluto — todo o sistema de ficheiros do Linux vive dentro desta única raiz." data-en="/ is the absolute top of the hierarchy. From here, you see bin, etc, home, var — all the main Linux folders. It's also the starting point of any absolute path — the entire Linux file system lives inside this single root.">/ é o topo absoluto da hierarquia. De aqui, vês bin, etc, home, var — todas as pastas principais do Linux. É também o ponto de partida de qualquer caminho absoluto — todo o sistema de ficheiros do Linux vive dentro desta única raiz.</p>
+
+      <h3><span class="cmd-badge">cd -</span> <span class="t" data-pt="Directório Anterior" data-en="Previous Directory">Directório Anterior</span></h3>
+      <p class="t" data-pt="Volta para o directório onde estavas ANTES. Como um Ctrl+Z de navegação — vai e volta entre dois lugares rapidamente. Por trás, o shell guarda esse directório anterior na variável OLDPWD, que é o que o cd - consulta." data-en="Returns to the directory you were in BEFORE. Like a navigation Ctrl+Z — quickly go back and forth between two places. Under the hood, the shell stores that previous directory in the OLDPWD variable, which is exactly what cd - reads.">Volta para o directório onde estavas ANTES. Como um Ctrl+Z de navegação — vai e volta entre dois lugares rapidamente. Por trás, o shell guarda esse directório anterior na variável OLDPWD, que é o que o cd - consulta.</p>
+      <div class="code-block"><code>$ cd /var/log
+$ cd ~/Projetos
+$ cd -          <span class="t" data-pt="# volta para /var/log" data-en="# returns to /var/log"># volta para /var/log</span></code></div>
+
+      <h3><span class="cmd-badge">cd ~utilizador</span> <span class="t" data-pt="Home de Outro Utilizador" data-en="Another User's Home">Home de Outro Utilizador</span></h3>
+      <p class="t" data-pt="Navega para a pasta home de outro utilizador (se tiveres permissão). Útil em servidores partilhados. Se não tiveres permissão de leitura nessa pasta, o comando ainda te deixa entrar, mas o ls seguinte não mostrará o conteúdo." data-en="Navigate to another user's home folder (if you have permission). Useful on shared servers. If you don't have read permission on that folder, the command still lets you in, but a following ls won't show its contents.">Navega para a pasta home de outro utilizador (se tiveres permissão). Útil em servidores partilhados. Se não tiveres permissão de leitura nessa pasta, o comando ainda te deixa entrar, mas o ls seguinte não mostrará o conteúdo.</p>
+
+      <h3><span class="cmd-badge">pushd</span> <span class="t" data-pt="Guardar e Mover" data-en="Save and Move">Guardar e Mover</span></h3>
+      <p class="t" data-pt="Move para um directório MAS guarda o anterior numa «pilha». Podes fazer pushd várias vezes e depois usar popd para voltar em ordem inversa. É literalmente uma estrutura de pilha — o último directório empilhado é sempre o primeiro a sair." data-en="Moves to a directory BUT saves the previous one in a «stack». You can pushd multiple times and then use popd to return in reverse order. It's literally a stack structure — the last directory pushed is always the first one out.">Move para um directório MAS guarda o anterior numa «pilha». Podes fazer pushd várias vezes e depois usar popd para voltar em ordem inversa. É literalmente uma estrutura de pilha — o último directório empilhado é sempre o primeiro a sair.</p>
+
+      <h3><span class="cmd-badge">popd</span> <span class="t" data-pt="Voltar da Pilha" data-en="Return from Stack">Voltar da Pilha</span></h3>
+      <p class="t" data-pt="Remove o topo da pilha de directórios e volta para ele. Perfeito quando trabalhas com múltiplos directórios. Se a pilha estiver vazia e tentares popd outra vez, o bash mostra um erro a avisar que não há mais nada para tirar." data-en="Removes the top of the directory stack and returns to it. Perfect when working with multiple directories. If the stack is empty and you try popd again, bash shows an error warning that there's nothing left to pop.">Remove o topo da pilha de directórios e volta para ele. Perfeito quando trabalhas com múltiplos directórios. Se a pilha estiver vazia e tentares popd outra vez, o bash mostra um erro a avisar que não há mais nada para tirar.</p>
+
+      <h3><span class="cmd-badge">dirs</span> <span class="t" data-pt="Ver a Pilha" data-en="View the Stack">Ver a Pilha</span></h3>
+      <p class="t" data-pt="Mostra todos os directórios guardados com pushd. dirs -v mostra a pilha numerada — podes fazer cd +1 para saltar para o segundo. dirs -c limpa toda a pilha, útil quando queres recomeçar um workflow de navegação do zero." data-en="Shows all directories saved with pushd. dirs -v shows the numbered stack — you can do cd +1 to jump to the second. dirs -c clears the whole stack, useful when you want to start a navigation workflow fresh.">Mostra todos os directórios guardados com pushd. dirs -v mostra a pilha numerada — podes fazer cd +1 para saltar para o segundo. dirs -c limpa toda a pilha, útil quando queres recomeçar um workflow de navegação do zero.</p>
+
+      <div class="callout">
+        <strong class="t" data-pt="Workflow Pro:" data-en="Pro Workflow:">Workflow Pro:</strong> <span class="t" data-pt="Muitos devs criam o alias cd='cd && ls' para listar automaticamente após cada cd. Assim, cada navegação já mostra o conteúdo." data-en="Many devs create the alias cd='cd && ls' to automatically list after each cd. This way, every navigation already shows the contents.">Muitos devs criam o alias cd='cd && ls' para listar automaticamente após cada cd. Assim, cada navegação já mostra o conteúdo.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 6: BLOCK 4 - FIND COMMANDS -->
+  <div class="page" id="page-6">
+    <div class="content-page">
+      <div class="section-tag t" data-pt="Capítulo 1 — Bloco 4" data-en="Chapter 1 — Block 4">Capítulo 1 — Bloco 4</div>
+      <h1 class="t" data-pt="Encontrar e Buscar" data-en="Find and Search">Encontrar e Buscar</h1>
+      <p class="t" data-pt="12 comandos para localizar qualquer coisa em qualquer parte do sistema — por nome, tipo, tamanho ou data." data-en="12 commands to locate anything anywhere in the system — by name, type, size or date.">12 comandos para localizar qualquer coisa em qualquer parte do sistema — por nome, tipo, tamanho ou data.</p>
+
+      <h3><span class="cmd-badge">find</span> <span class="t" data-pt="Busca Recursiva" data-en="Recursive Search">Busca Recursiva</span></h3>
+      <p class="t" data-pt="O comando mais poderoso para busca. Percorre TODO o directório e subpastas com critérios específicos. É mais lento que locate porque percorre o disco em tempo real, mas por isso mesmo encontra sempre resultados actualizados." data-en="The most powerful command for searching. Traverses ALL directories and subfolders with specific criteria. It's slower than locate because it scans the disk in real time, but that's exactly why its results are always up to date.">O comando mais poderoso para busca. Percorre TODO o directório e subpastas com critérios específicos. É mais lento que locate porque percorre o disco em tempo real, mas por isso mesmo encontra sempre resultados actualizados.</p>
+      <div class="code-block"><code>$ find ~ -name '*.txt'           <span class="t" data-pt="# todos os .txt na home" data-en="# all .txt in home"># todos os .txt na home</span>
+$ find / -name 'config*' -type f <span class="t" data-pt="# ficheiros começando com config" data-en="# files starting with config"># ficheiros começando com config</span></code></div>
+
+      <h3><span class="cmd-badge">find -name</span> <span class="t" data-pt="Buscar por Nome" data-en="Search by Name">Buscar por Nome</span></h3>
+      <p class="t" data-pt="A flag mais comum. Usa wildcards: * (qualquer coisa), ? (um caractere). Use -iname para ignorar maiúsculas/minúsculas. As aspas à volta do padrão são importantes — sem elas, é o próprio shell que tenta expandir o wildcard antes do find o receber." data-en="The most common flag. Uses wildcards: * (anything), ? (one character). Use -iname to ignore case. The quotes around the pattern matter — without them, the shell itself tries to expand the wildcard before find ever sees it.">A flag mais comum. Usa wildcards: * (qualquer coisa), ? (um caractere). Use -iname para ignorar maiúsculas/minúsculas. As aspas à volta do padrão são importantes — sem elas, é o próprio shell que tenta expandir o wildcard antes do find o receber.</p>
+      <div class="code-block"><code>$ find ~/Projetos -name 'package.json'
+$ find . -iname '*.JS'  <span class="t" data-pt="# encontra .js e .JS" data-en="# finds .js and .JS"># encontra .js e .JS</span></code></div>
+
+      <h3><span class="cmd-badge">find -type</span> <span class="t" data-pt="Filtrar por Tipo" data-en="Filter by Type">Filtrar por Tipo</span></h3>
+      <p class="t" data-pt="f = ficheiro, d = directório, l = link simbólico. Fundamental para não misturar ficheiros e pastas nos resultados. Também existem -type s para sockets e -type p para pipes nomeados, ainda que sejam usados com muito menos frequência." data-en="f = file, d = directory, l = symbolic link. Essential for not mixing files and folders in results. There's also -type s for sockets and -type p for named pipes, though these come up far less often.">f = ficheiro, d = directório, l = link simbólico. Fundamental para não misturar ficheiros e pastas nos resultados. Também existem -type s para sockets e -type p para pipes nomeados, ainda que sejam usados com muito menos frequência.</p>
+      <div class="code-block"><code>$ find . -type d -name 'node_modules'  <span class="t" data-pt="# encontra todas as pastas node_modules" data-en="# finds all node_modules folders"># encontra todas as pastas node_modules</span></code></div>
+
+      <h3><span class="cmd-badge">find -size</span> <span class="t" data-pt="Buscar por Tamanho" data-en="Search by Size">Buscar por Tamanho</span></h3>
+      <p class="t" data-pt="+100M (maior que), -10M (menor que). Quando o disco está cheio, este comando encontra os culpados. Sem o sinal + ou -, find -size 100M procura ficheiros com EXACTAMENTE esse tamanho, o que raramente é o que se quer." data-en="+100M (larger than), -10M (smaller than). When the disk is full, this command finds the culprits. Without the + or - sign, find -size 100M looks for files with EXACTLY that size, which is rarely what you actually want.">+100M (maior que), -10M (menor que). Quando o disco está cheio, este comando encontra os culpados. Sem o sinal + ou -, find -size 100M procura ficheiros com EXACTAMENTE esse tamanho, o que raramente é o que se quer.</p>
+      <div class="code-block"><code>$ find ~ -size +500M  <span class="t" data-pt="# ficheiros maiores que 500MB" data-en="# files larger than 500MB"># ficheiros maiores que 500MB</span>
+$ find . -type f -size +1G -name '*.mp4'  <span class="t" data-pt="# vídeos grandes" data-en="# large videos"># vídeos grandes</span></code></div>
+
+      <h3><span class="cmd-badge">find -mtime</span> <span class="t" data-pt="Buscar por Data" data-en="Search by Date">Buscar por Data</span></h3>
+      <p class="t" data-pt="-mtime -1 (modificado hoje), -mtime +30 (não modificado há mais de 30 dias). Essencial para limpeza de ficheiros antigos. Existem também -atime (último acesso) e -ctime (mudança de metadados), cada um a medir uma coisa ligeiramente diferente." data-en="-mtime -1 (modified today), -mtime +30 (not modified for more than 30 days). Essential for cleaning old files. There's also -atime (last access) and -ctime (metadata change), each measuring a slightly different thing.">-mtime -1 (modificado hoje), -mtime +30 (não modificado há mais de 30 dias). Essencial para limpeza de ficheiros antigos. Existem também -atime (último acesso) e -ctime (mudança de metadados), cada um a medir uma coisa ligeiramente diferente.</p>
+
+      <h3><span class="cmd-badge">find -newer</span> <span class="t" data-pt="Mais Recente que Outro Ficheiro" data-en="Newer than Another File">Mais Recente que Outro Ficheiro</span></h3>
+      <p class="t" data-pt="Encontra tudo modificado depois de um ficheiro específico. Perfeito para ver o que mudou desde o último backup. O ficheiro de referência nem precisa de estar no mesmo directório — só a data de modificação dele é que importa." data-en="Finds everything modified after a specific file. Perfect for seeing what changed since the last backup. The reference file doesn't even need to be in the same directory — only its modification date matters.">Encontra tudo modificado depois de um ficheiro específico. Perfeito para ver o que mudou desde o último backup. O ficheiro de referência nem precisa de estar no mesmo directório — só a data de modificação dele é que importa.</p>
+
+      <h3><span class="cmd-badge">locate</span> <span class="t" data-pt="Busca Rápida" data-en="Quick Search">Busca Rápida</span></h3>
+      <p class="t" data-pt="MUITO mais rápido que find porque usa um banco de dados pré-indexado. Mas não encontra ficheiros criados recentemente. updatedb actualiza o índice. Essa base de dados costuma actualizar-se sozinha uma vez por dia via cron, por isso ficheiros muito recentes ainda podem não aparecer." data-en="MUCH faster than find because it uses a pre-indexed database. But won't find recently created files. updatedb updates the index. That database usually updates itself once a day via cron, so very recent files may still not show up.">MUITO mais rápido que find porque usa um banco de dados pré-indexado. Mas não encontra ficheiros criados recentemente. updatedb actualiza o índice. Essa base de dados costuma actualizar-se sozinha uma vez por dia via cron, por isso ficheiros muito recentes ainda podem não aparecer.</p>
+
+      <h3><span class="cmd-badge">which</span> <span class="t" data-pt="Caminho do Executável" data-en="Executable Path">Caminho do Executável</span></h3>
+      <p class="t" data-pt="Mostra qual ficheiro executável é usado quando digitas um comando. Quando tens múltiplas versões (python2 vs python3), which diz qual está activo. Segue sempre a ordem do PATH — se houver duas versões instaladas, mostra a primeira que o shell encontrar." data-en="Shows which executable file is used when you type a command. When you have multiple versions (python2 vs python3), which tells you which is active. It always follows the order of PATH — if two versions are installed, it shows the first one the shell finds.">Mostra qual ficheiro executável é usado quando digitas um comando. Quando tens múltiplas versões (python2 vs python3), which diz qual está activo. Segue sempre a ordem do PATH — se houver duas versões instaladas, mostra a primeira que o shell encontrar.</p>
+      <div class="code-block"><code>$ which python
+/usr/local/bin/python3</code></div>
+
+      <h3><span class="cmd-badge">whereis</span> <span class="t" data-pt="Todos os Locais" data-en="All Locations">Todos os Locais</span></h3>
+      <p class="t" data-pt="Como which, mas mostra o executável, o source e o manual. Mais completo para diagnosticar instalações. Ao contrário do which, não depende do PATH — procura em localizações padrão do sistema, mesmo que o comando não esteja acessível directamente." data-en="Like which, but shows the executable, source and manual. More complete for diagnosing installations. Unlike which, it doesn't depend on PATH — it searches standard system locations, even if the command isn't directly accessible.">Como which, mas mostra o executável, o source e o manual. Mais completo para diagnosticar instalações. Ao contrário do which, não depende do PATH — procura em localizações padrão do sistema, mesmo que o comando não esteja acessível directamente.</p>
+
+      <h3><span class="cmd-badge">type</span> <span class="t" data-pt="Tipo de Comando" data-en="Command Type">Tipo de Comando</span></h3>
+      <p class="t" data-pt="Diz se um comando é built-in do shell, alias, função ou ficheiro externo. Mais informativo que which. É útil para perceber porque é que um comando se comporta de forma inesperada — muitas vezes é porque um alias está a sobrepor-se ao binário original." data-en="Tells if a command is a shell built-in, alias, function or external file. More informative than which. It's useful for figuring out why a command behaves unexpectedly — often it's because an alias is overriding the original binary.">Diz se um comando é built-in do shell, alias, função ou ficheiro externo. Mais informativo que which. É útil para perceber porque é que um comando se comporta de forma inesperada — muitas vezes é porque um alias está a sobrepor-se ao binário original.</p>
+
+      <h3><span class="cmd-badge">whatis</span> <span class="t" data-pt="Descrição Rápida" data-en="Quick Description">Descrição Rápida</span></h3>
+      <p class="t" data-pt="Mostra uma descrição de uma linha de um comando. Mais rápido que man quando só queres saber o que faz. Usa a mesma base de dados das páginas man, por isso, se o manual não estiver indexado, whatis também não encontra nada." data-en="Shows a one-line description of a command. Faster than man when you just want to know what it does. It uses the same database as the man pages, so if the manual isn't indexed on the system, whatis won't find anything either.">Mostra uma descrição de uma linha de um comando. Mais rápido que man quando só queres saber o que faz. Usa a mesma base de dados das páginas man, por isso, se o manual não estiver indexado, whatis também não encontra nada.</p>
+      <div class="code-block"><code>$ whatis ls
+ls (1) - list directory contents</code></div>
+    </div>
+  </div>
+
+  <!-- PAGE 7: BLOCKS 5+6 -->
+  <div class="page" id="page-7">
+    <div class="content-page">
+      <div class="section-tag t" data-pt="Capítulo 1 — Blocos 5 & 6" data-en="Chapter 1 — Blocks 5 & 6">Capítulo 1 — Blocos 5 & 6</div>
+      <h1 class="t" data-pt="Estrutura, Metadados e Combinações" data-en="Structure, Metadata and Combinations">Estrutura, Metadados e Combinações</h1>
+
+      <h2 class="t" data-pt="Bloco 5: Entender Estrutura — 8 Comandos" data-en="Block 5: Understand Structure — 8 Commands">Bloco 5: Entender Estrutura — 8 Comandos</h2>
+
+      <h3><span class="cmd-badge">file</span> <span class="t" data-pt="Tipo de Ficheiro" data-en="File Type">Tipo de Ficheiro</span></h3>
+      <p class="t" data-pt="Analisa o CONTEÚDO real do ficheiro e diz o que é — não depende da extensão. Um executável malicioso renomeado para .txt? file revela a verdade. Faz isto lendo os primeiros bytes do ficheiro (o chamado \"magic number\"), que identificam o formato real independentemente do nome." data-en="Analyzes the actual CONTENT of the file and tells you what it is — doesn't depend on the extension. A malicious executable renamed to .txt? file reveals the truth. It does this by reading the file's first bytes (the so-called \"magic number\"), which identify the real format regardless of the name.">Analisa o CONTEÚDO real do ficheiro e diz o que é — não depende da extensão. Um executável malicioso renomeado para .txt? file revela a verdade. Faz isto lendo os primeiros bytes do ficheiro (o chamado \"magic number\"), que identificam o formato real independentemente do nome.</p>
+
+      <h3><span class="cmd-badge">stat</span> <span class="t" data-pt="Informações Completas" data-en="Complete Information">Informações Completas</span></h3>
+      <p class="t" data-pt="Mostra TUDO sobre um ficheiro: inode, permissões, links, tempo de acesso, modificação e criação. Muito mais que ls -l. Os diferentes carimbos de tempo respondem a perguntas distintas: quando foi lido, quando foi editado e quando o dono ou as permissões mudaram." data-en="Shows EVERYTHING about a file: inode, permissions, links, access time, modification and creation. Much more than ls -l. The different timestamps answer distinct questions: when it was read, when it was edited, and when its owner or permissions last changed.">Mostra TUDO sobre um ficheiro: inode, permissões, links, tempo de acesso, modificação e criação. Muito mais que ls -l. Os diferentes carimbos de tempo respondem a perguntas distintas: quando foi lido, quando foi editado e quando o dono ou as permissões mudaram.</p>
+
+      <h3><span class="cmd-badge">du</span> <span class="t" data-pt="Uso de Disco" data-en="Disk Usage">Uso de Disco</span></h3>
+      <p class="t" data-pt="Mostra quanto espaço um DIRECTÓRIO está a usar. du -sh * mostra o tamanho de cada item no directório actual. Por padrão, du soma também o espaço das subpastas inteiras, por isso os números podem parecer maiores do que esperarias à primeira vista." data-en="Shows how much space a DIRECTORY is using. du -sh * shows the size of each item in the current directory. By default, du also adds up the space used by entire subfolders, so the numbers can look bigger than you'd expect at first glance.">Mostra quanto espaço um DIRECTÓRIO está a usar. du -sh * mostra o tamanho de cada item no directório actual. Por padrão, du soma também o espaço das subpastas inteiras, por isso os números podem parecer maiores do que esperarias à primeira vista.</p>
+      <div class="code-block"><code>$ du -sh .       <span class="t" data-pt="# tamanho total do projecto" data-en="# total project size"># tamanho total do projecto</span>
+$ du -sh /*      <span class="t" data-pt="# tamanho de cada pasta na raiz" data-en="# size of each folder at root"># tamanho de cada pasta na raiz</span></code></div>
+
+      <h3><span class="cmd-badge">df</span> <span class="t" data-pt="Espaço Livre no Disco" data-en="Free Disk Space">Espaço Livre no Disco</span></h3>
+      <p class="t" data-pt="Mostra quanto espaço LIVRE existe em cada partição. df -h mostra em formato legível. Quando atinge 90%, é hora de limpar. Ao contrário do du, que mede ficheiros, o df olha para a partição inteira — por isso os dois às vezes parecem não bater certo." data-en="Shows how much FREE space exists on each partition. df -h shows in readable format. When it reaches 90%, it's time to clean up. Unlike du, which measures files, df looks at the whole partition — which is why the two sometimes seem not to add up.">Mostra quanto espaço LIVRE existe em cada partição. df -h mostra em formato legível. Quando atinge 90%, é hora de limpar. Ao contrário do du, que mede ficheiros, o df olha para a partição inteira — por isso os dois às vezes parecem não bater certo.</p>
+
+      <h3><span class="cmd-badge">tree</span> <span class="t" data-pt="Visualizar Hierarquia" data-en="Visualize Hierarchy">Visualizar Hierarquia</span></h3>
+      <p class="t" data-pt="Mostra a estrutura de directórios visualmente em árvore. Muito mais legível que ls -R. tree -L 3 limita a 3 níveis de profundidade. Nem todas as distribuições Linux trazem o tree pré-instalado — muitas vezes é preciso instalá-lo com o gestor de pacotes (apt, dnf, etc.)." data-en="Shows directory structure visually as a tree. Much more readable than ls -R. tree -L 3 limits to 3 levels deep. Not every Linux distribution ships with tree pre-installed — often you'll need to install it via the package manager (apt, dnf, etc.).">Mostra a estrutura de directórios visualmente em árvore. Muito mais legível que ls -R. tree -L 3 limita a 3 níveis de profundidade. Nem todas as distribuições Linux trazem o tree pré-instalado — muitas vezes é preciso instalá-lo com o gestor de pacotes (apt, dnf, etc.).</p>
+      <div class="code-block"><code>$ tree -L 2 -I 'node_modules|.git'</code></div>
+
+      <h3><span class="cmd-badge">realpath</span> <span class="t" data-pt="Caminho Absoluto Real" data-en="Real Absolute Path">Caminho Absoluto Real</span></h3>
+      <p class="t" data-pt="Mostra o caminho absoluto e real, resolvendo links simbólicos. Em scripts, usa realpath para garantir a localização correcta. É particularmente útil dentro de scripts que precisam de saber a sua própria localização exacta, independentemente de onde foram chamados." data-en="Shows the real absolute path, resolving symbolic links. In scripts, use realpath to ensure the correct location. It's particularly useful inside scripts that need to know their own exact location, regardless of where they were called from.">Mostra o caminho absoluto e real, resolvendo links simbólicos. Em scripts, usa realpath para garantir a localização correcta. É particularmente útil dentro de scripts que precisam de saber a sua própria localização exacta, independentemente de onde foram chamados.</p>
+
+      <h3><span class="cmd-badge">readlink</span> <span class="t" data-pt="Ler Link Simbólico" data-en="Read Symbolic Link">Ler Link Simbólico</span></h3>
+      <p class="t" data-pt="Mostra para onde um link simbólico aponta. readlink -f resolve links em cadeia (link a apontar para link). Se um link apontar para outro link, que por sua vez aponta para mais um, o -f resolve toda essa cadeia de uma só vez." data-en="Shows where a symbolic link points. readlink -f resolves chained links (link pointing to link). If a link points to another link, which in turn points to yet another, -f resolves that whole chain in one go.">Mostra para onde um link simbólico aponta. readlink -f resolve links em cadeia (link a apontar para link). Se um link apontar para outro link, que por sua vez aponta para mais um, o -f resolve toda essa cadeia de uma só vez.</p>
+
+      <hr class="divider">
+      <h2 class="t" data-pt="Bloco 6: Combinações Avançadas — 3 Padrões Poderosos" data-en="Block 6: Advanced Combinations — 3 Powerful Patterns">Bloco 6: Combinações Avançadas — 3 Padrões Poderosos</h2>
+
+      <div class="callout purple">
+        <strong class="t" data-pt="A Magia Real:" data-en="The Real Magic:">A Magia Real:</strong> <span class="t" data-pt="Estes não são comandos únicos — são PADRÕES que transformam alguém que sabe comandos em alguém que RESOLVE PROBLEMAS." data-en="These are not single commands — they are PATTERNS that transform someone who knows commands into someone who SOLVES PROBLEMS.">Estes não são comandos únicos — são PADRÕES que transformam alguém que sabe comandos em alguém que RESOLVE PROBLEMAS.</span>
+      </div>
+
+      <h3><span class="cmd-badge">find + grep</span> <span class="t" data-pt="Buscar Dentro de Ficheiros" data-en="Search Inside Files">Buscar Dentro de Ficheiros</span></h3>
+      <p class="t" data-pt="find localiza ficheiros. grep filtra por conteúdo. Juntos, encontram conteúdo específico dentro de qualquer ficheiro. Este padrão é tão comum que muitas equipas o transformam num alias no .bashrc, poupando segundos preciosos todos os dias." data-en="find locates files. grep filters by content. Together, they find specific content inside any file. This pattern is so common that many teams turn it into an alias in .bashrc, saving precious seconds every day.">find localiza ficheiros. grep filtra por conteúdo. Juntos, encontram conteúdo específico dentro de qualquer ficheiro. Este padrão é tão comum que muitas equipas o transformam num alias no .bashrc, poupando segundos preciosos todos os dias.</p>
+      <div class="code-block"><code>$ find . -type f -name '*.js' | xargs grep 'TODO'
+<span class="t" data-pt="# Encontra todos os comentários TODO em todos os .js" data-en="# Finds all TODO comments across every .js file"># Encontra todos os comentários TODO em todos os .js</span></code></div>
+
+      <h3><span class="cmd-badge">ls + Wildcards</span> <span class="t" data-pt="Padrões de Correspondência" data-en="Matching Patterns">Padrões de Correspondência</span></h3>
+      <p class="t" data-pt="* (qualquer coisa), ? (um caractere), [] (conjunto). Wildcards funcionam com QUALQUER comando — ls, rm, cp, mv. É o próprio shell que expande os wildcards antes de o comando correr — por isso até comandos muito simples funcionam bem com eles." data-en="* (anything), ? (one character), [] (set). Wildcards work with ANY command — ls, rm, cp, mv. The shell itself expands wildcards before the command even runs — that's why even very simple commands work fine with them.">* (qualquer coisa), ? (um caractere), [] (conjunto). Wildcards funcionam com QUALQUER comando — ls, rm, cp, mv. É o próprio shell que expande os wildcards antes de o comando correr — por isso até comandos muito simples funcionam bem com eles.</p>
+      <div class="code-block"><code>$ ls *.txt            <span class="t" data-pt="# apenas .txt" data-en="# .txt only"># apenas .txt</span>
+$ rm *.log            <span class="t" data-pt="# PERIGO: apaga todos os .log!" data-en="# DANGER: deletes every .log!"># PERIGO: apaga todos os .log!</span>
+<span class="t" data-pt="# Sempre faz ls *.log primeiro para ver o que vai apagar" data-en="# Always run ls *.log first to see what will be deleted"># Sempre faz ls *.log primeiro para ver o que vai apagar</span></code></div>
+
+      <h3><span class="cmd-badge">cd + ls</span> <span class="t" data-pt="Workflow de Exploração" data-en="Exploration Workflow">Workflow de Exploração</span></h3>
+      <p class="t" data-pt="O padrão fundamental de qualquer developer: entrar numa pasta e imediatamente listar o conteúdo. Repetido dezenas de vezes por dia. Com o tempo, este workflow torna-se automático — as mãos digitam cd && ls quase sem pensar, como um reflexo." data-en="The fundamental pattern of any developer: enter a folder and immediately list the contents. Repeated dozens of times a day. Over time, this workflow becomes automatic — hands type cd && ls almost without thinking, like a reflex.">O padrão fundamental de qualquer developer: entrar numa pasta e imediatamente listar o conteúdo. Repetido dezenas de vezes a dia. Com o tempo, este workflow torna-se automático — as mãos digitam cd && ls quase sem pensar, como um reflexo.</p>
+      <div class="code-block"><code>cd projecto && ls -la   <span class="t" data-pt="# entra e lista tudo de uma vez" data-en="# enters and lists everything at once"># entra e lista tudo de uma vez</span>
+tree -L 2               <span class="t" data-pt="# visão geral antes de navegar" data-en="# overview before navigating"># visão geral antes de navegar</span></code></div>
+    </div>
+  </div>
+
+  <!-- PAGE 8: CONCLUSION -->
+  <div class="page" id="page-8">
+    <div class="content-page">
+      <div class="section-tag t" data-pt="Conclusão" data-en="Conclusion">Conclusão</div>
+      <h1 class="t" data-pt="Conclusão do Capítulo 1" data-en="Chapter 1 Conclusion">Conclusão do Capítulo 1</h1>
+
+      <p class="t" data-pt="Parabéns. Acabaste de aprender 50 comandos de navegação e exploração. Esta é A BASE ABSOLUTA do terminal Linux." data-en="Congratulations. You've just learned 50 navigation and exploration commands. This is THE ABSOLUTE BASE of the Linux terminal.">Parabéns. Acabaste de aprender 50 comandos de navegação e exploração. Esta é A BASE ABSOLUTA do terminal Linux.</p>
+
+      <div class="highlight-box">
+        <p class="t" data-pt="Com estes comandos consegues: navegar por qualquer estrutura de directórios · explorar projectos desconhecidos · buscar ficheiros por múltiplos critérios · entender a estrutura e metadados de ficheiros · combinar comandos para resolver problemas complexos · trabalhar com confiança em qualquer sistema Linux." data-en="With these commands you can: navigate any directory structure · explore unknown projects · search files by multiple criteria · understand the structure and metadata of files · combine commands to solve complex problems · work confidently on any Linux system.">Com estes comandos consegues: navegar por qualquer estrutura de directórios · explorar projectos desconhecidos · buscar ficheiros por múltiplos critérios · entender a estrutura e metadados de ficheiros · combinar comandos para resolver problemas complexos · trabalhar com confiança em qualquer sistema Linux.</p>
+      </div>
+
+      <div class="callout">
+        <strong class="t" data-pt="Agora PRATICA." data-en="Now PRACTICE.">Agora PRATICA.</strong><br>
+        <span class="t" data-pt="Abre um terminal. Navega. Usa find. Explora. Combina comandos. Isto não é teoria — é prática. Quando conseguires usar estes 50 comandos sem pensar, com velocidade e precisão, saberás que estás no caminho certo." data-en="Open a terminal. Navigate. Use find. Explore. Combine commands. This is not theory — it's practice. When you can use these 50 commands without thinking, with speed and precision, you'll know you're on the right track.">Abre um terminal. Navega. Usa find. Explora. Combina comandos. Isto não é teoria — é prática. Quando conseguires usar estes 50 comandos sem pensar, com velocidade e precisão, saberás que estás no caminho certo.</span>
+      </div>
+
+      <h2 class="t" data-pt="O Que Vem a Seguir" data-en="What Comes Next">O Que Vem a Seguir</h2>
+      <p class="t" data-pt="Nas Partes 2-5, expandirás para:" data-en="In Parts 2-5, you'll expand to:">Nas Partes 2-5, expandirás para:</p>
+      <ul class="list-items">
+        <li><span class="t" data-pt="Criação e manipulação de ficheiros" data-en="Creating and manipulating files">Criação e manipulação de ficheiros</span></li>
+        <li><span class="t" data-pt="Leitura e edição de texto" data-en="Reading and editing text">Leitura e edição de texto</span></li>
+        <li><span class="t" data-pt="Permissões e segurança" data-en="Permissions and security">Permissões e segurança</span></li>
+        <li><span class="t" data-pt="Automação com scripts" data-en="Automation with scripts">Automação com scripts</span></li>
+        <li><span class="t" data-pt="Hacking ético e segurança" data-en="Ethical hacking and security">Hacking ético e segurança</span></li>
+      </ul>
+
+      <div class="callout purple" style="margin-top:40px; text-align:center;">
+        <strong class="t" data-pt="Bem-vindo ao mundo dos developers." data-en="Welcome to the world of developers.">Bem-vindo ao mundo dos developers.</strong><br>
+        <span class="t" data-pt="Estás só a começar." data-en="You're just getting started.">Estás só a começar.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 9: ABOUT -->
+  <div class="page" id="page-9">
+    <div class="about-page">
+      <div class="page-eyebrow t" data-pt="Sobre o Autor" data-en="About the Author">Sobre o Autor</div>
+      <h1 class="page-title t" data-pt="Leonardo Sebastião" data-en="Leonardo Sebastião">Leonardo Sebastião</h1>
+
+      <div class="author-card">
+        <div>
+          <div class="author-name">Leonardo Sebastião</div>
+          <div class="author-handle">@leonardo.dev · Entusiasta de Tecnologia</div>
+          <p class="author-bio t" data-pt="Leonardo Sebastião é um entusiasta de tecnologia e estudante autodidata de Linux. Começou como qualquer iniciante — intimidado pelo ecrã preto e pelo cursor piscante, sem saber por onde começar. À medida que ia aprendendo, foi tomando apontamentos pessoais sobre cada comando, cada conceito, cada pequena descoberta no terminal." data-en="Leonardo Sebastião is a technology enthusiast and self-taught Linux learner. He started like any beginner — intimidated by the black screen and the blinking cursor, not knowing where to start. As he learned, he kept personal notes on each command, each concept, each small discovery in the terminal.">Leonardo Sebastião é um entusiasta de tecnologia e estudante autodidata de Linux. Começou como qualquer iniciante — intimidado pelo ecrã preto e pelo cursor piscante, sem saber por onde começar. À medida que ia aprendendo, foi tomando apontamentos pessoais sobre cada comando, cada conceito, cada pequena descoberta no terminal.</p>
+          <p class="author-bio t" data-pt="Este guia nasceu desses apontamentos. Não é o trabalho de um especialista a ensinar do topo — é o registo de uma jornada de aprendizagem, organizado e partilhado para que outros iniciantes possam aproveitar o mesmo caminho sem passar pelas mesmas dúvidas. A ideia surgiu naturalmente: já que estava a escrever para entender, porque não escrever para ensinar também?" data-en="This guide was born from those notes. It is not the work of an expert teaching from the top — it is the record of a learning journey, organized and shared so other beginners can follow the same path without the same doubts. The idea came naturally: since the notes were already being written to understand, why not write them to teach as well?">Este guia nasceu desses apontamentos. Não é o trabalho de um especialista a ensinar do topo — é o registo de uma jornada de aprendizagem, organizado e partilhado para que outros iniciantes possam aproveitar o mesmo caminho sem passar pelas mesmas dúvidas. A ideia surgiu naturalmente: já que estava a escrever para entender, porque não escrever para ensinar também?</p>
+          <div class="tag-row">
+            <span class="tag">Linux</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Aprendizagem Contínua</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Self-taught</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="support-block">
+        <div class="page-eyebrow t" data-pt="Apoiar o Projeto" data-en="Support the Project" style="margin-top:0;">Apoiar o Projeto</div>
+        <p class="t" data-pt="Este ebook é gratuito e vai continuar a ser melhorado. Se aprendeste algo aqui e quiseres apoiar este trabalho, podes deixar uma contribuição — qualquer valor ajuda a continuar a escrever e a partilhar mais conteúdo sobre Linux." data-en="This ebook is free and will keep being improved. If you learned something here and want to support this work, you can leave a contribution — any amount helps keep this writing and sharing of Linux content going.">Este ebook é gratuito e vai continuar a ser melhorado. Se aprendeste algo aqui e quiseres apoiar este trabalho, podes deixar uma contribuição — qualquer valor ajuda a continuar a escrever e a partilhar mais conteúdo sobre Linux.</p>
+        <a href="https://ko-fi.com/cxi50" target="_blank" rel="noopener" class="btn-support">
+          ☕ <span class="t" data-pt="Apoiar no Ko-fi" data-en="Support on Ko-fi">Apoiar no Ko-fi</span>
+        </a>
+      </div>
+
+      <div class="social-block">
+        <div class="page-eyebrow t" data-pt="Segue o Projeto" data-en="Follow the Project" style="margin-top:0;">Segue o Projeto</div>
+        <p class="t" data-pt="Se quiseres acompanhar novos ebooks, apontamentos e experiências, podes encontrar-me nestes sítios:" data-en="If you want to follow new ebooks, notes and experiments, you can find me in these places:">Se quiseres acompanhar novos ebooks, apontamentos e experiências, podes encontrar-me nestes sítios:</p>
+        <div class="social-row">
+          <a href="https://github.com/cxi5" target="_blank" rel="noopener" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.9.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.35.96.1-.74.4-1.25.72-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://x.com/cx50z" target="_blank" rel="noopener" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2h3.3l-7.2 8.23L23.5 22h-6.8l-5.32-6.96L4.9 22H1.6l7.7-8.8L1 2h6.96l4.8 6.35L18.9 2Zm-2.4 18.17h1.83L7.6 3.73H5.64l10.86 16.44Z"/></svg>
+            <span>X / Twitter</span>
+          </a>
+          <a href="https://www.instagram.com/leo_sebastiao0?igsh=MXRveHNudGh0emdwNg==" target="_blank" rel="noopener" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.22.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.22-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.05.36-2.22.41-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.22-.41a3.74 3.74 0 0 1-1.38-.9 3.74 3.74 0 0 1-.9-1.38c-.16-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.22.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.05-.36 2.22-.41 1.27-.06 1.65-.07 4.85-.07ZM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.9 5.9 0 0 0-2.13 1.39A5.9 5.9 0 0 0 .62 4.14c-.3.76-.5 1.64-.56 2.91C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.64.5 2.91.56C8.33 24 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.39 5.9 5.9 0 0 0 1.39-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.39-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0Zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.6a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.facebook.com/LeoSebastiaoII" target="_blank" rel="noopener" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.01 4.39 11 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.93-1.95 1.89v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.07 24 18.08 24 12.07Z"/></svg>
+            <span>Facebook</span>
+          </a>
+          <a href="https://vimeo.com/user260400406?fl=pp&fe=sh" target="_blank" rel="noopener" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.98 6.62c-.1 2.27-1.69 5.38-4.77 9.33-3.18 4.13-5.87 6.2-8.07 6.2-1.37 0-2.52-1.26-3.46-3.8-.63-2.32-1.26-4.64-1.89-6.96-.7-2.53-1.46-3.8-2.27-3.8-.18 0-.79.37-1.84 1.1L.6 7.32c1.16-1.02 2.3-2.04 3.43-3.06C5.5 2.93 6.71 2.2 7.51 2.13c1.97-.19 3.19 1.16 3.64 4.04.49 3.11.83 5.04 1.02 5.79.56 2.56 1.18 3.84 1.86 3.84.52 0 1.31-.83 2.36-2.49 1.04-1.66 1.6-2.92 1.67-3.79.14-1.44-.41-2.16-1.67-2.16-.59 0-1.21.14-1.84.41 1.22-4.02 3.56-5.97 7.02-5.86 2.56.07 3.77 1.75 3.61 5.04Z"/></svg>
+            <span>Vimeo</span>
+          </a>
+          <a href="https://codepen.io/cxi5" target="_blank" rel="noopener" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0 .5 7.97v8.06L12 24l11.5-7.97V7.97L12 0Zm0 2.4 9.3 6.43-4.18 2.9L12 8.27 6.88 11.7l-4.18-2.9L12 2.4Zm-9.7 7.6 3.7 2.57-3.7 2.57V10ZM2.7 16.4l4.18-2.9L12 16.93l5.12-3.43 4.18 2.9L12 22.6 2.7 16.4Zm18.6 0-3.7-2.57 3.7-2.57v5.14ZM12 10.36l3.42 2.37L12 15.1l-3.42-2.37L12 10.36Z"/></svg>
+            <span>CodePen</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="dedication-block">
+        <div class="dedication-quote">
+          <span class="t" data-pt="«Este livro é dedicado a todos que já ficaram paralisados em frente a um terminal preto, com o cursor a piscar, sem saber o que digitar. Para vocês — este guia foi escrito. O terminal não é vosso inimigo. É a vossa ferramenta mais poderosa à espera de ser dominada.»" data-en="«This book is dedicated to everyone who has ever frozen in front of a black terminal, with the cursor blinking, not knowing what to type. For you — this guide was written. The terminal is not your enemy. It's your most powerful tool waiting to be mastered.»">«Este livro é dedicado a todos que já ficaram paralisados em frente a um terminal preto, com o cursor a piscar, sem saber o que digitar. Para vocês — este guia foi escrito. O terminal não é vosso inimigo. É a vossa ferramenta mais poderosa à espera de ser dominada.»</span>
+        </div>
+        <div class="dedication-author">— Leonardo Sebastião</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- BOTTOM NAVIGATION -->
+<div class="page-nav" id="pageNav">
+  <button class="btn-nav" id="btnPrev" onclick="goToPrev()">← <span class="t" data-pt="Anterior" data-en="Previous">Anterior</span></button>
+  <div class="page-nav-info" id="pageInfo"></div>
+  <button class="btn-nav primary" id="btnNext" onclick="goToNext()"><span class="t" data-pt="Próximo" data-en="Next">Próximo</span> →</button>
+</div>
+
+  <script src="ebook.js"></script>
+</body>
+</html>
