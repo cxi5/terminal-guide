@@ -164,7 +164,7 @@
     transition: width 0.3s;
   }
 
-  /* ====== COVER PAGE ======= */
+  /* COVER PAGE */
   .cover {
     min-height: calc(100vh - 56px);
     display: grid;
@@ -291,7 +291,7 @@
     letter-spacing:0.1em;
   }
 
-  /* ====== INDEX PAGE ====== */
+  /* INDEX PAGE */
   .toc-page { max-width: 820px; margin:0 auto; padding: 60px 24px; }
   .page-header { margin-bottom: 48px; }
   .page-eyebrow {
@@ -538,7 +538,7 @@
     .page-nav { padding: 10px 12px; }
   }
 
-  /* ====== RESPONSIVE FIXES (telas pequenas) ====== */
+  /* RESPONSIVE FIXES (telas pequenas) */
 
   /* Tablets / telas médias */
   @media (max-width: 768px) {

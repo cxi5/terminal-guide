@@ -15,20 +15,18 @@ let currentPage = 0;
 let lang = 'pt';
 let darkMode = true;
 
-// --- Persistência local (localStorage) ---------------------------------
-// Guarda em que página, idioma e tema o leitor ficou, para que ao fechar
-// e reabrir o ficheiro localmente ele volte exactamente onde parou.
-// Envolvido em try/catch porque localStorage pode estar bloqueado
-// (modo privado, restrições do navegador, etc.) e isso NUNCA deve
-// impedir o resto do ebook de funcionar.
+/*Persistência local (localStorage)
+Guarda em que página, idioma e tema o leitor ficou, para que ao fechar e reabrir o ficheiro localmente ele volte exactamente onde parou. Envolvido em try/catch porque localStorage pode estar bloqueado no modo privado, restrições do navegador, etc e isso NUNCA deve impedir o resto do ebook de funcionar.*/
+
 const STORAGE_KEY = 'terminal-guide-state';
 
 function saveState() {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ page: currentPage, lang, darkMode }));
   } catch (err) {
-    // Armazenamento indisponível — o ebook continua a funcionar normalmente,
-    // só não vai lembrar o estado na próxima visita.
+
+/*Armazenamento indisponível — o ebook continua a funcionar normalmente, só não vai lembrar o estado na próxima visita.*/
+    
   }
 }
 
@@ -44,9 +42,9 @@ function loadState() {
   }
 }
 
-// --- Deep-linking por página (#page-N) -----------------------------------
-// Permite partilhar um link directo para uma página específica
-// (ex: ebook.html#page-4) e mantém a URL sincronizada com a página actual.
+/*Deep-linking por página (#page-N)
+Permite partilhar um link directo para uma página específica, (ex: ebook.html#page-4) e mantém a URL sincronizada com a página actual.*/
+
 function pageFromHash() {
   const m = location.hash.match(/^#page-(\d+)$/);
   if (!m) return null;
@@ -124,8 +122,8 @@ function updateNav() {
   document.getElementById('pageNav').style.display = currentPage === 0 ? 'none' : 'flex';
 }
 
-// Reconstrói o TOC e a barra de navegação numa única passada — evita
-// as chamadas duplicadas a buildTOC()/updateNav() que existiam antes.
+/*Reconstrói o TOC e a barra de navegação numa única passada, evita as chamadas duplicadas a buildTOC()/updateNav() que existiam antes.*/
+
 function render() {
   buildTOC();
   updateNav();
@@ -157,16 +155,16 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') goToPrev();
 });
 
-// Reage a mudanças de hash feitas fora do goToPage (edição manual da URL,
-// clique num link #page-N vindo de fora, navegação back/forward do browser)
+/*Reage a mudanças de hash feitas fora do goToPage (edição manual da URL, clique num link #page-N vindo de fora, navegação back/forward do browser)*/
+
 window.addEventListener('hashchange', () => {
   const n = pageFromHash();
   if (n !== null && n !== currentPage) goToPage(n);
 });
 
-// Init — restaura página, idioma e tema salvos localmente (se existirem).
-// Um #page-N na URL tem prioridade sobre o estado salvo, porque é um
-// sinal explícito de que alguém partilhou um link para essa página.
+/*Init — restaura página, idioma e tema salvos localmente (se existirem).
+Um #page-N na URL tem prioridade sobre o estado salvo, porque é um sinal explícito de que alguém partilhou um link para essa página.*/
+
 (function init() {
   const saved = loadState();
   const hashPage = pageFromHash();
@@ -191,8 +189,8 @@ window.addEventListener('hashchange', () => {
     document.getElementById('themeIcon').textContent = darkMode ? '🌙' : '☀️';
   }
 
-  // setLang aplica as traduções do idioma restaurado e já chama
-  // render() + saveState() internamente.
+/*setLang aplica as traduções do idioma restaurado e já chama render() + saveState() internamente.*/
+  
   setLang(lang);
   syncHash();
 })();
