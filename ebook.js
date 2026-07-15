@@ -189,7 +189,7 @@ Um #page-N na URL tem prioridade sobre o estado salvo, porque é um sinal explí
     document.getElementById('themeIcon').textContent = darkMode ? '🌙' : '☀️';
   }
 
-/*setLang aplica as traduções do idioma restaurado e já chama render() + saveState() internamente.*/
+// setLang aplica as traduções do idioma restaurado e já chama render() + saveState() internamente.
   
   setLang(lang);
   syncHash();
