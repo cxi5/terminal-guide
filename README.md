@@ -12,10 +12,10 @@ Um ebook interativo em HTML, CSS e JavaScript (sem frameworks, sem build step) q
 
 ## Funcionalidades
 
-- 🌐 **Bilingue** — troca instantânea entre Português e Inglês, incluindo os comentários dentro dos blocos de código (confirmado: 221 pares de atributos `data-pt`/`data-en` em todo o `index.html`)
+- **Bilingue** — troca instantânea entre Português e Inglês, incluindo os comentários dentro dos blocos de código (confirmado: 221 pares de atributos `data-pt`/`data-en` em todo o `index.html`)
 - ;;
-- 🌓 **Tema claro/escuro**
-- 💾 **Retoma de leitura** — guarda localmente em que página, idioma e tema ficaste, e volta exactamente para lá da próxima vez que abrires o ficheiro
+- **Tema claro/escuro**
+- **Retoma de leitura** — guarda localmente em que página, idioma e tema ficaste, e volta exactamente para lá da próxima vez que abrires o ficheiro
 - 🔗 **Links directos por página** — `index.html#page-4` abre já naquela página
 
 ## Conteúdo actual
@@ -36,9 +36,3 @@ Novos capítulos serão adicionados progressivamente.
 O **código** (HTML/CSS/JS) está sob licença MIT — ver [LICENSE](LICENSE).
 
 O **texto e conteúdo do ebook** (explicações, exemplos, biografia do autor) pertence a Leonardo Sebastião. Podes partilhar e citar com atribuição, mas não redistribuir ou vender como teu.
-
-## Autor
-
-**Leonardo Sebastião** — entusiasta e estudante de tecnologia.
-
-Se este guia te ajudou, podes apoiar o trabalho em [Ko-fi](https://ko-fi.com/cxi50) ou seguir o projecto no [GitHub](https://github.com/cxi5).
